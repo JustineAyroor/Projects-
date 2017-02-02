@@ -9,13 +9,8 @@ void setup()
 {
   Serial.begin(9600);
   esp8266.begin(9600); // your esp's baud rate might be different
-  
- 
-  
-  
   pinMode(13,OUTPUT);
-  digitalWrite(13,LOW);
-   
+  digitalWrite(13,LOW);   
   sendData("AT+RST\r\n",2000,DEBUG); // reset module
   sendData("AT+CWMODE=2\r\n",1000,DEBUG); // configure as access point
   sendData("AT+CIFSR\r\n",1000,DEBUG); // get ip address
